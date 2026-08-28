@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vida residual — León Ochoa C.</title>
+<meta name="description" content="Vida residual — exposición de León Ochoa C. Estatuto, obra y contacto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0807;
+    --bg-raised:#120e0c;
+    --bone:#e9e2d3;
+    --bone-dim:#a89f8f;
+    --oxide:#7c2020;
+    --oxide-bright:#a8341f;
+    --gold:#b6874f;
+    --gold-dim:#8a6a42;
+    --line:#2a2320;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--bone);
+    font-family:'Work Sans',sans-serif;
+    font-weight:300;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--oxide);color:var(--bone);}
+
+  h1,h2,.serif{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    letter-spacing:0.01em;
+  }
+
+  a{color:inherit;}
+
+  .wrap{
+    max-width:640px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* --- divider: cracked vein motif --- */
+  .divider{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    padding:40px 0;
+    opacity:0.8;
+  }
+  .divider svg{width:120px;height:24px;}
+
+  /* --- HERO --- */
+  .hero{
+    min-height:92vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    padding:80px 28px 60px;
+    position:relative;
+    border-bottom:1px solid var(--line);
+  }
+  .hero .eyebrow{
+    font-family:'Work Sans',sans-serif;
+    font-size:12px;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 11vw, 4.6rem);
+    line-height:0.98;
+    color:var(--bone);
+    font-style:italic;
+    font-weight:500;
+  }
+  .hero h1 em{
+    display:block;
+    font-style:normal;
+    color:var(--oxide-bright);
+  }
+  .hero .artist{
+    margin-top:26px;
+    font-size:14px;
+    letter-spacing:0.06em;
+    color:var(--bone-dim);
+    text-transform:uppercase;
+  }
+  .hero .artist strong{
+    color:var(--bone);
+    font-weight:500;
+  }
+  .scroll-cue{
+    position:absolute;
+    bottom:28px;
+    left:28px;
+    font-size:11px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--bone-dim);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .scroll-cue span.line{
+    width:22px;height:1px;background:var(--gold-dim);
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+
+  /* --- STATEMENT --- */
+  .statement{
+    padding:70px 0 50px;
+  }
+  .statement .label{
+    font-size:12px;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:28px;
+    display:block;
+  }
+  .statement p{
+    font-family:'Fraunces',serif;
+    font-weight:300;
+    font-size:clamp(1.15rem, 4vw, 1.4rem);
+    line-height:1.62;
+    color:var(--bone);
+    margin-bottom:22px;
+  }
+  .statement p:last-of-type{
+    color:var(--gold);
+    font-style:italic;
+  }
+
+  /* --- CATALOG / OBRAS --- */
+  .catalog{
+    padding:20px 0 40px;
+  }
+  .catalog .label{
+    font-size:12px;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:8px;
+    display:block;
+  }
+  .catalog .sub{
+    font-size:13px;
+    color:var(--bone-dim);
+    margin-bottom:36px;
+  }
+
+  .piece{
+    border-top:1px solid var(--line);
+    padding:30px 0;
+  }
+  .piece:last-child{border-bottom:1px solid var(--line);}
+
+  /* --- gallery / carousel per piece --- */
+  .gallery{
+    position:relative;
+    margin-bottom:18px;
+  }
+  .gallery-track{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+    border:1px solid var(--line);
+    border-radius:2px;
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+  }
+  .gallery-track::-webkit-scrollbar{display:none;}
+  .slide{
+    flex:0 0 100%;
+    aspect-ratio:4/3;
+    scroll-snap-align:start;
+    background:linear-gradient(160deg, var(--bg-raised) 0%, #1a1310 60%, var(--bg-raised) 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .slide::after{
+    content:"reemplazar con imagen de la obra";
+    font-family:'Work Sans',sans-serif;
+    font-size:11px;
+    letter-spacing:0.05em;
+    color:var(--bone-dim);
+    opacity:0.5;
+    text-align:center;
+    padding:0 20px;
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .slide img{
+    position:absolute;
+    inset:0;
+    width:100%;height:100%;object-fit:cover;display:none;
+  }
+  .slide:has(img[src]:not([src=""]))::after{
+    display:none;
+  }
+  .gallery-dots{
+    display:flex;
+    gap:6px;
+    justify-content:center;
+    margin-top:10px;
+  }
+  .gallery-dots button{
+    width:6px;height:6px;
+    border-radius:50%;
+    border:none;
+    background:var(--line);
+    padding:0;
+    cursor:pointer;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .gallery-dots button.active{
+    background:var(--gold);
+    transform:scale(1.3);
+  }
+  .gallery-dots:has(button:only-child){display:none;}
+
+  .piece-title{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:6px;
+  }
+  .piece-num{
+    font-family:'Fraunces',serif;
+    font-size:13px;
+    color:var(--gold-dim);
+  }
+  .piece h3{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-style:italic;
+    font-size:1.5rem;
+    color:var(--bone);
+  }
+  .piece-medium{
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--bone-dim);
+    opacity:0.75;
+    margin-bottom:12px;
+  }
+  .piece .tag{
+    display:inline-block;
+    font-size:10px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--oxide-bright);
+    border:1px solid var(--oxide);
+    padding:3px 8px;
+    border-radius:2px;
+    margin-bottom:12px;
+  }
+  .piece p{
+    font-size:14px;
+    color:var(--bone-dim);
+    line-height:1.65;
+    max-width:52ch;
+  }
+
+  /* --- SIGNATURE NOTE --- */
+  .sig-note{
+    padding:10px 0 60px;
+    border-top:1px solid var(--line);
+    margin-top:10px;
+  }
+  .sig-note p{
+    font-size:12.5px;
+    color:var(--bone-dim);
+    line-height:1.7;
+    font-style:italic;
+  }
+  .sig-note .label{
+    font-size:11px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--gold-dim);
+    display:block;
+    margin-bottom:12px;
+    font-style:normal;
+  }
+
+  /* --- CONTACT / CTA --- */
+  .contact{
+    padding:60px 0 90px;
+    text-align:center;
+    background:var(--bg-raised);
+    border-top:1px solid var(--line);
+  }
+  .contact .label{
+    font-size:12px;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:18px;
+  }
+  .contact h2{
+    font-size:clamp(1.6rem,6vw,2.2rem);
+    font-style:italic;
+    margin-bottom:34px;
+    color:var(--bone);
+  }
+  .btn-row{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    align-items:center;
+    margin-bottom:40px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Work Sans',sans-serif;
+    font-size:14px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:16px 34px;
+    border-radius:2px;
+    width:min(320px, 84vw);
+    justify-content:center;
+    transition:transform .15s ease, opacity .15s ease;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-primary{
+    background:var(--oxide-bright);
+    color:var(--bone);
+    font-weight:500;
+  }
+  .btn-secondary{
+    border:1px solid var(--gold-dim);
+    color:var(--gold);
+  }
+  .contact-meta{
+    font-size:12.5px;
+    color:var(--bone-dim);
+    line-height:2;
+  }
+  .contact-meta a{text-decoration:none;color:var(--bone-dim);}
+  .contact-meta strong{color:var(--bone-dim);font-weight:500;}
+
+  footer{
+    text-align:center;
+    padding:26px 0 40px;
+    font-size:10.5px;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    color:#4a423a;
+  }
+
+  @media (min-width:680px){
+    .piece{
+      display:grid;
+      grid-template-columns:240px 1fr;
+      gap:32px;
+      align-items:start;
+    }
+    .piece .gallery{margin-bottom:0;}
+    .piece .slide{aspect-ratio:1/1;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="eyebrow">Exposición · Teraphia</div>
+    <h1>Vida<br><em>residual</em></h1>
+    <div class="artist">Obra de <strong>León Ochoa C.</strong></div>
+    <div class="scroll-cue"><span class="line"></span> desliza</div>
+  </section>
+
+  <div class="wrap">
+
+    <!-- STATEMENT -->
+    <section class="statement">
+      <span class="label">Statement</span>
+      <p>Mi obra explora la transformación de la materia a través de la muerte, el deterioro y la descomposición, entendidos como ciclos naturales de la vida.</p>
+      <p>Encuentro belleza en aquello que suele provocar rechazo: un cuerpo en transición, una flor marchita o un resto anatómico. En sus texturas y colores descubro una riqueza orgánica para cuestionar nuestra relación con lo incómodo e inevitable.</p>
+      <p>No busco imponer una interpretación, sino provocar una pausa en medio de la noche. Lograr que la imagen intrigue y atraiga, obligándote a mirar de cerca lo que preferimos ignorar.</p>
+      <p>Porque la muerte es materia transformándose, y esa transformación también es vida.</p>
+    </section>
+
+    <div class="divider">
+      <svg viewBox="0 0 120 24" fill="none"><path d="M0 12 L28 12 L34 4 L40 20 L46 8 L52 16 L58 12 L120 12" stroke="#8a6a42" stroke-width="1"/></svg>
+    </div>
+
+    <!-- CATALOG -->
+    <section class="catalog">
+      <span class="label">Obra expuesta</span>
+      <div class="sub">Siete piezas, Vida residual, 2026</div>
+
+      <!-- Post mortem (serie) -->
+      <div class="piece">
+        <div class="gallery" data-gallery>
+          <div class="gallery-track">
+            <div class="slide"><img src="https://i.ibb.co/S4Zy6p6w/IMG-4594.avif" alt="Post mortem — imagen 1" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/zWZP9xs7/IMG-4596.avif" alt="Post mortem — imagen 2" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/60y2JFcQ/IMG-4597.avif" alt="Post mortem — imagen 3" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/5g4pKKf9/IMG-4589.avif" alt="Post mortem — imagen 4" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/QSDvjNr/IMG-4591.avif" alt="Post mortem — imagen 5" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/yjqS0v0/IMG-4592.avif" alt="Post mortem — imagen 6" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/1GQJhQpZ/IMG-4582.avif" alt="Post mortem — imagen 7" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/j92jsL6d/IMG-4583.avif" alt="Post mortem — imagen 8" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/N288YzM0/IMG-4588.avif" alt="Post mortem — imagen 9" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/nqZTBFMY/IMG-4603.avif" alt="Post mortem — imagen 10" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/V0nHXghy/IMG-4605.avif" alt="Post mortem — imagen 11" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/bMswps5m/IMG-4576.avif" alt="Post mortem — imagen 12" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/gFFYK7Xg/IMG-4578.avif" alt="Post mortem — imagen 13" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/GvzLZDnG/IMG-4577.avif" alt="Post mortem — imagen 14" style="display:block"></div>
+          </div>
+          <div class="gallery-dots"></div>
+        </div>
+        <div>
+          <span class="tag">Serie · 5 piezas</span>
+          <div class="piece-title"><span class="piece-num">01</span><h3>Post mortem</h3></div>
+          <div class="piece-medium">Óleo sobre lienzo</div>
+          <p>Una serie sobre aquello que viene de afuera y termina afectando lo interno. Los órganos vitales aparecen enfermos, deteriorados o en descomposición, mientras insectos y otros organismos los habitan como agentes externos de transformación. La serie plantea una relación entre cuerpo, entorno y somatización: aquello que nos rodea también puede terminar habitándonos.</p>
+        </div>
+      </div>
+
+      <div class="piece">
+        <div class="gallery" data-gallery>
+          <div class="gallery-track">
+            <div class="slide"><img src="https://i.ibb.co/WjBJpys/IMG-4571.avif" alt="Desolación — imagen principal" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/hxPNTGnQ/IMG-4572.avif" alt="Desolación — detalle 1" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/Swn5vSgd/IMG-4573.avif" alt="Desolación — detalle 2" style="display:block"></div>
+          </div>
+          <div class="gallery-dots"></div>
+        </div>
+        <div>
+          <div class="piece-title"><span class="piece-num">02</span><h3>Desolación</h3></div>
+          <div class="piece-medium">Óleo sobre lienzo</div>
+        </div>
+      </div>
+
+      <div class="piece">
+        <div class="gallery" data-gallery>
+          <div class="gallery-track">
+            <div class="slide"><img src="https://i.ibb.co/sdHsn0KS/IMG-4609.avif" alt="Rezagos de un vanidoso — imagen principal" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/Z6krc7hX/IMG-4610.avif" alt="Rezagos de un vanidoso — detalle 1" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/m5M4HQvF/IMG-4612.avif" alt="Rezagos de un vanidoso — detalle 2" style="display:block"></div>
+          </div>
+          <div class="gallery-dots"></div>
+        </div>
+        <div>
+          <div class="piece-title"><span class="piece-num">03</span><h3>Rezagos de un vanidoso</h3></div>
+          <div class="piece-medium">Óleo sobre lienzo</div>
+        </div>
+      </div>
+
+      <div class="piece">
+        <div class="gallery" data-gallery>
+          <div class="gallery-track">
+            <div class="slide"><img src="https://i.ibb.co/Gv90n81S/Captura-de-pantalla-2026-08-28-160050.png" alt="Deceso" style="display:block"></div>
+          </div>
+          <div class="gallery-dots"></div>
+        </div>
+        <div>
+          <div class="piece-title"><span class="piece-num">04</span><h3>Deceso</h3></div>
+          <div class="piece-medium">Óleo sobre lienzo</div>
+        </div>
+      </div>
+
+      <div class="piece">
+        <div class="gallery" data-gallery>
+          <div class="gallery-track">
+            <div class="slide"><img src="https://i.ibb.co/Mx65srRh/IMG-4629.avif" alt="Tránsito entre la niebla — imagen principal" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/bMMfkqZ2/IMG-4630.avif" alt="Tránsito entre la niebla — detalle 1" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/39932RQB/IMG-4631.avif" alt="Tránsito entre la niebla — detalle 2" style="display:block"></div>
+          </div>
+          <div class="gallery-dots"></div>
+        </div>
+        <div>
+          <div class="piece-title"><span class="piece-num">05</span><h3>Tránsito entre la niebla</h3></div>
+          <div class="piece-medium">Óleo sobre lienzo</div>
+        </div>
+      </div>
+
+      <div class="piece">
+        <div class="gallery" data-gallery>
+          <div class="gallery-track">
+            <div class="slide"><img src="https://i.ibb.co/KzQhFDqS/IMG-4620.avif" alt="Coincidir en la existencia — imagen principal" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/xQbJ9N2/IMG-4626.avif" alt="Coincidir en la existencia — detalle 1" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/Q3z2jxXJ/IMG-4627.avif" alt="Coincidir en la existencia — detalle 2" style="display:block"></div>
+          </div>
+          <div class="gallery-dots"></div>
+        </div>
+        <div>
+          <div class="piece-title"><span class="piece-num">06</span><h3>Coincidir en la existencia</h3></div>
+          <div class="piece-medium">Óleo sobre lienzo</div>
+        </div>
+      </div>
+
+      <div class="piece">
+        <div class="gallery" data-gallery>
+          <div class="gallery-track">
+            <div class="slide"><img src="https://i.ibb.co/W4FHm0h8/IMG-4632.avif" alt="Ya se fue — imagen principal" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/JWYhQGzJ/IMG-4633.avif" alt="Ya se fue — detalle 1" style="display:block"></div>
+            <div class="slide"><img src="https://i.ibb.co/LXNkFFZT/IMG-4635.avif" alt="Ya se fue — detalle 2" style="display:block"></div>
+          </div>
+          <div class="gallery-dots"></div>
+        </div>
+        <div>
+          <div class="piece-title"><span class="piece-num">07</span><h3>Ya se fue</h3></div>
+          <div class="piece-medium">Óleo sobre lienzo</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNATURE NOTE -->
+    <section class="sig-note">
+      <span class="label">Sobre la firma</span>
+      <p>Algunas de estas obras fueron realizadas y firmadas bajo el nombre de C. Daniel Ochoa C., que utilicé durante una etapa anterior de mi trayectoria. Actualmente firmo mi obra como León Ochoa C.</p>
+    </section>
+  </div>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <div class="wrap">
+      <span class="label">Contacto</span>
+      <h2>¿Te interesa una pieza?</h2>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://wa.me/573002260816?text=Hola%20Le%C3%B3n%2C%20vi%20tu%20expo%20Vida%20residual%20y%20quiero%20saber%20m%C3%A1s" target="_blank" rel="noopener">
+          Escribir por WhatsApp
+        </a>
+        <a class="btn btn-secondary" href="https://instagram.com/leonochoac" target="_blank" rel="noopener">
+          @leonochoac en Instagram
+        </a>
+      </div>
+      <div class="contact-meta">
+        <strong>León Ochoa C.</strong><br>
+        <a href="mailto:leonochoacorrea@gmail.com">leonochoacorrea@gmail.com</a><br>
+        <a href="tel:+573002260816">300 226 0816</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>Vida residual — 2026</footer>
+
+  <script>
+    document.querySelectorAll('[data-gallery]').forEach(function(gallery){
+      var track = gallery.querySelector('.gallery-track');
+      var slides = Array.from(track.querySelectorAll('.slide'));
+      var dotsWrap = gallery.querySelector('.gallery-dots');
+
+      slides.forEach(function(_, i){
+        var dot = document.createElement('button');
+        dot.setAttribute('aria-label', 'Ver imagen ' + (i + 1));
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', function(){
+          track.scrollTo({ left: slides[i].offsetLeft, behavior: 'smooth' });
+        });
+        dotsWrap.appendChild(dot);
+      });
+
+      var dots = Array.from(dotsWrap.children);
+      var ticking = false;
+      track.addEventListener('scroll', function(){
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function(){
+          var idx = Math.round(track.scrollLeft / track.clientWidth);
+          dots.forEach(function(d, i){ d.classList.toggle('active', i === idx); });
+          ticking = false;
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
