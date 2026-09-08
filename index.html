@@ -107,14 +107,16 @@
     text-transform:uppercase;
     color:var(--bone-dim);
     display:flex;
+    flex-direction:column;
     align-items:center;
-    gap:10px;
+    gap:8px;
   }
-  .scroll-cue span.line{
-    width:22px;height:1px;background:var(--gold-dim);
-    animation:pulse 2.4s ease-in-out infinite;
+  .scroll-cue .arrow{
+    font-size:14px;
+    color:var(--gold-dim);
+    animation:bob 1.8s ease-in-out infinite;
   }
-  @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+  @keyframes bob{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(5px);opacity:1}}
 
   /* --- STATEMENT --- */
   .statement{
@@ -204,11 +206,12 @@
     border-radius:2px;
     -ms-overflow-style:none;
     scrollbar-width:none;
+    aspect-ratio:4/3;
+    transition:aspect-ratio .2s ease;
   }
   .gallery-track::-webkit-scrollbar{display:none;}
   .slide{
     flex:0 0 100%;
-    aspect-ratio:4/3;
     scroll-snap-align:start;
     background:linear-gradient(160deg, var(--bg-raised) 0%, #1a1310 60%, var(--bg-raised) 100%);
     display:flex;
@@ -417,7 +420,6 @@
       align-items:start;
     }
     .piece .gallery{margin-bottom:0;}
-    .piece .slide{aspect-ratio:1/1;}
   }
 </style>
 </head>
@@ -428,7 +430,7 @@
     <div class="eyebrow">Exposición · Teraphia</div>
     <h1>Vida<br><em>residual</em></h1>
     <div class="artist">Obra de <strong>León Ochoa C.</strong></div>
-    <div class="scroll-cue"><span class="line"></span> desliza</div>
+    <div class="scroll-cue">desliza <span class="arrow">↓</span></div>
   </section>
 
   <div class="wrap">
@@ -668,6 +670,19 @@
       var track = gallery.querySelector('.gallery-track');
       var slides = Array.from(track.querySelectorAll('.slide'));
       var dotsWrap = gallery.querySelector('.gallery-dots');
+      var imgs = slides.map(function(s){ return s.querySelector('img'); });
+
+      function setRatioFor(i){
+        var img = imgs[i];
+        if (!img) return;
+        var apply = function(){
+          if (img.naturalWidth && img.naturalHeight){
+            track.style.aspectRatio = img.naturalWidth + ' / ' + img.naturalHeight;
+          }
+        };
+        if (img.complete) apply();
+        else img.addEventListener('load', apply, { once:true });
+      }
 
       slides.forEach(function(_, i){
         var dot = document.createElement('button');
@@ -680,6 +695,8 @@
       });
 
       var dots = Array.from(dotsWrap.children);
+      setRatioFor(0);
+
       var ticking = false;
       track.addEventListener('scroll', function(){
         if (ticking) return;
@@ -687,6 +704,7 @@
         requestAnimationFrame(function(){
           var idx = Math.round(track.scrollLeft / track.clientWidth);
           dots.forEach(function(d, i){ d.classList.toggle('active', i === idx); });
+          setRatioFor(idx);
           ticking = false;
         });
       });
