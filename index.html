@@ -235,7 +235,7 @@
   .slide img{
     position:absolute;
     inset:0;
-    width:100%;height:100%;object-fit:cover;display:none;
+    width:100%;height:100%;object-fit:contain;display:none;
   }
   .slide:has(img[src]:not([src=""]))::after{
     display:none;
@@ -303,6 +303,19 @@
     color:var(--bone-dim);
     line-height:1.65;
     max-width:52ch;
+  }
+  .piece-cta{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:14px;
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--gold);
+    text-decoration:none;
+    border-bottom:1px solid var(--gold-dim);
+    padding-bottom:2px;
   }
 
   /* --- SIGNATURE NOTE --- */
@@ -425,7 +438,7 @@
       <span class="label">Statement</span>
       <p>Mi obra explora la transformación de la materia a través de la muerte, el deterioro y la descomposición, entendidos como ciclos naturales de la vida.</p>
       <p>Encuentro belleza en aquello que suele provocar rechazo: un cuerpo en transición, una flor marchita o un resto anatómico. En sus texturas y colores descubro una riqueza orgánica para cuestionar nuestra relación con lo incómodo e inevitable.</p>
-      <p>No busco imponer una interpretación, sino provocar una pausa en medio de la noche. Lograr que la imagen intrigue y atraiga, obligándote a mirar de cerca lo que preferimos ignorar.</p>
+      <p>No busco imponer una interpretación, sino provocar una pausa en medio de la noche. <strong>Lograr que la imagen intrigue y atraiga, obligándote a mirar de cerca lo que preferimos ignorar.</strong></p>
       <p>Porque la muerte es materia transformándose, y esa transformación también es vida.</p>
     </section>
 
@@ -454,32 +467,38 @@
             </div>
             <div class="gallery-dots"></div>
           </div>
-          <div><h4>Corazón</h4><div class="piece-medium">Óleo sobre lienzo</div></div>
+          <div><h4>Corazón</h4><div class="piece-medium">Óleo sobre lienzo · 25 × 35 cm</div>
+            <a class="piece-cta" href="https://wa.me/573002260816?text=Hola%20Le%C3%B3n%2C%20me%20interesa%20la%20obra%20Coraz%C3%B3n%20de%20Vida%20residual" target="_blank" rel="noopener">Me interesa esta obra →</a>
+          </div>
         </div>
 
         <div class="piece sub-piece">
           <div class="gallery" data-gallery>
             <div class="gallery-track">
-              <div class="slide"><img src="https://leon8art.x02.me/i/cerebro4.jpg" alt="Cerebro — imagen 1" style="display:block"></div>
-              <div class="slide"><img src="https://leon8art.x02.me/i/cerebro3.jpg" alt="Cerebro — imagen 2" style="display:block"></div>
-              <div class="slide"><img src="https://leon8art.x02.me/i/cerebro1.jpg" alt="Cerebro — imagen 3" style="display:block"></div>
-              <div class="slide"><img src="https://leon8art.x02.me/i/cerebro2.jpg" alt="Cerebro — imagen 4" style="display:block"></div>
+              <div class="slide"><img src="https://leon8art.x02.me/i/cerebro1.jpg" alt="Cerebro — imagen 1" style="display:block"></div>
+              <div class="slide"><img src="https://leon8art.x02.me/i/cerebro2.jpg" alt="Cerebro — imagen 2" style="display:block"></div>
+              <div class="slide"><img src="https://leon8art.x02.me/i/cerebro3.jpg" alt="Cerebro — imagen 3" style="display:block"></div>
+              <div class="slide"><img src="https://leon8art.x02.me/i/cerebro4.jpg" alt="Cerebro — imagen 4" style="display:block"></div>
             </div>
             <div class="gallery-dots"></div>
           </div>
-          <div><h4>Cerebro</h4><div class="piece-medium">Óleo sobre lienzo</div></div>
+          <div><h4>Cerebro</h4><div class="piece-medium">Óleo sobre lienzo · 25 × 35 cm</div>
+            <a class="piece-cta" href="https://wa.me/573002260816?text=Hola%20Le%C3%B3n%2C%20me%20interesa%20la%20obra%20Cerebro%20de%20Vida%20residual" target="_blank" rel="noopener">Me interesa esta obra →</a>
+          </div>
         </div>
 
         <div class="piece sub-piece">
           <div class="gallery" data-gallery>
             <div class="gallery-track">
-              <div class="slide"><img src="https://leon8art.x02.me/i/higado2.jpg" alt="Hígado — imagen 1" style="display:block"></div>
-              <div class="slide"><img src="https://leon8art.x02.me/i/higado1.jpg" alt="Hígado — imagen 2" style="display:block"></div>
+              <div class="slide"><img src="https://leon8art.x02.me/i/higado1.jpg" alt="Hígado — imagen 1" style="display:block"></div>
+              <div class="slide"><img src="https://leon8art.x02.me/i/higado2.jpg" alt="Hígado — imagen 2" style="display:block"></div>
               <div class="slide"><img src="https://leon8art.x02.me/i/higado3.jpg" alt="Hígado — imagen 3" style="display:block"></div>
             </div>
             <div class="gallery-dots"></div>
           </div>
-          <div><h4>Hígado</h4><div class="piece-medium">Óleo sobre lienzo</div></div>
+          <div><h4>Hígado</h4><div class="piece-medium">Óleo sobre lienzo · 25 × 35 cm</div>
+            <a class="piece-cta" href="https://wa.me/573002260816?text=Hola%20Le%C3%B3n%2C%20me%20interesa%20la%20obra%20H%C3%ADgado%20de%20Vida%20residual" target="_blank" rel="noopener">Me interesa esta obra →</a>
+          </div>
         </div>
 
         <div class="piece sub-piece">
@@ -491,7 +510,9 @@
             </div>
             <div class="gallery-dots"></div>
           </div>
-          <div><h4>Pulmón</h4><div class="piece-medium">Óleo sobre lienzo</div></div>
+          <div><h4>Pulmón</h4><div class="piece-medium">Óleo sobre lienzo · 25 × 35 cm</div>
+            <a class="piece-cta" href="https://wa.me/573002260816?text=Hola%20Le%C3%B3n%2C%20me%20interesa%20la%20obra%20Pulm%C3%B3n%20de%20Vida%20residual" target="_blank" rel="noopener">Me interesa esta obra →</a>
+          </div>
         </div>
 
         <div class="piece sub-piece">
@@ -502,67 +523,73 @@
             </div>
             <div class="gallery-dots"></div>
           </div>
-          <div><h4>Riñón</h4><div class="piece-medium">Óleo sobre lienzo</div></div>
+          <div><h4>Riñón</h4><div class="piece-medium">Óleo sobre lienzo · 25 × 35 cm</div>
+            <a class="piece-cta" href="https://wa.me/573002260816?text=Hola%20Le%C3%B3n%2C%20me%20interesa%20la%20obra%20Ri%C3%B1%C3%B3n%20de%20Vida%20residual" target="_blank" rel="noopener">Me interesa esta obra →</a>
+          </div>
         </div>
       </div>
 
       <div class="piece">
         <div class="gallery" data-gallery>
           <div class="gallery-track">
-            <div class="slide"><img src="https://leon8art.x02.me/i/momia2.jpg" alt="Desolación — imagen 1" style="display:block"></div>
-            <div class="slide"><img src="https://leon8art.x02.me/i/momia1.jpg" alt="Desolación — imagen 2" style="display:block"></div>
-            <div class="slide"><img src="https://leon8art.x02.me/i/momia4.jpg" alt="Desolación — imagen 3" style="display:block"></div>
-            <div class="slide"><img src="https://leon8art.x02.me/i/momia3.jpg" alt="Desolación — imagen 4" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/momia1.jpg" alt="Desolación — imagen 1" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/momia2.jpg" alt="Desolación — imagen 2" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/momia3.jpg" alt="Desolación — imagen 3" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/momia4.jpg" alt="Desolación — imagen 4" style="display:block"></div>
           </div>
           <div class="gallery-dots"></div>
         </div>
         <div>
           <div class="piece-title"><span class="piece-num">02</span><h3>Desolación</h3></div>
-          <div class="piece-medium">Óleo sobre lienzo</div>
+          <div class="piece-medium">Óleo sobre lienzo · 100 × 80 cm</div>
+          <a class="piece-cta" href="https://wa.me/573002260816?text=Hola%20Le%C3%B3n%2C%20me%20interesa%20la%20obra%20Desolaci%C3%B3n%20de%20Vida%20residual" target="_blank" rel="noopener">Me interesa esta obra →</a>
         </div>
       </div>
 
       <div class="piece">
         <div class="gallery" data-gallery>
           <div class="gallery-track">
-            <div class="slide"><img src="https://leon8art.x02.me/i/rezagos4.jpg" alt="Rezagos de un vanidoso — imagen 1" style="display:block"></div>
-            <div class="slide"><img src="https://leon8art.x02.me/i/rezagos1.jpg" alt="Rezagos de un vanidoso — imagen 2" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/rezagos1.jpg" alt="Rezagos de un vanidoso — imagen 1" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/rezagos2.jpg" alt="Rezagos de un vanidoso — imagen 2" style="display:block"></div>
             <div class="slide"><img src="https://leon8art.x02.me/i/rezagos3.jpg" alt="Rezagos de un vanidoso — imagen 3" style="display:block"></div>
-            <div class="slide"><img src="https://leon8art.x02.me/i/rezagos2.jpg" alt="Rezagos de un vanidoso — imagen 4" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/rezagos4.jpg" alt="Rezagos de un vanidoso — imagen 4" style="display:block"></div>
           </div>
           <div class="gallery-dots"></div>
         </div>
         <div>
           <div class="piece-title"><span class="piece-num">03</span><h3>Rezagos de un vanidoso</h3></div>
-          <div class="piece-medium">Óleo sobre lienzo</div>
+          <div class="piece-medium">Óleo sobre lienzo · 42 × 30 cm</div>
+          <a class="piece-cta" href="https://wa.me/573002260816?text=Hola%20Le%C3%B3n%2C%20me%20interesa%20la%20obra%20Rezagos%20de%20un%20vanidoso%20de%20Vida%20residual" target="_blank" rel="noopener">Me interesa esta obra →</a>
         </div>
       </div>
 
       <div class="piece">
         <div class="gallery" data-gallery>
           <div class="gallery-track">
-            <div class="slide"><img src="" alt="Deceso"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/deceso.jpg" alt="Deceso" style="display:block"></div>
           </div>
           <div class="gallery-dots"></div>
         </div>
         <div>
           <div class="piece-title"><span class="piece-num">04</span><h3>Deceso</h3></div>
-          <div class="piece-medium">Óleo sobre lienzo</div>
+          <div class="piece-medium">Óleo sobre lienzo · 25 × 20 cm</div>
+          <a class="piece-cta" href="https://wa.me/573002260816?text=Hola%20Le%C3%B3n%2C%20me%20interesa%20la%20obra%20Deceso%20de%20Vida%20residual" target="_blank" rel="noopener">Me interesa esta obra →</a>
         </div>
       </div>
 
       <div class="piece">
         <div class="gallery" data-gallery>
           <div class="gallery-track">
-            <div class="slide"><img src="https://leon8art.x02.me/i/cabra3.jpg" alt="Tránsito entre la niebla — imagen 1" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/cabra1.jpg" alt="Tránsito entre la niebla — imagen 1" style="display:block"></div>
             <div class="slide"><img src="https://leon8art.x02.me/i/cabra2.jpg" alt="Tránsito entre la niebla — imagen 2" style="display:block"></div>
-            <div class="slide"><img src="https://leon8art.x02.me/i/cabra1.jpg" alt="Tránsito entre la niebla — imagen 3" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/cabra3.jpg" alt="Tránsito entre la niebla — imagen 3" style="display:block"></div>
           </div>
           <div class="gallery-dots"></div>
         </div>
         <div>
           <div class="piece-title"><span class="piece-num">05</span><h3>Tránsito entre la niebla</h3></div>
-          <div class="piece-medium">Óleo sobre lienzo</div>
+          <div class="piece-medium">Óleo sobre lienzo · 30 × 40 cm</div>
+          <a class="piece-cta" href="https://wa.me/573002260816?text=Hola%20Le%C3%B3n%2C%20me%20interesa%20la%20obra%20Tr%C3%A1nsito%20entre%20la%20niebla%20de%20Vida%20residual" target="_blank" rel="noopener">Me interesa esta obra →</a>
         </div>
       </div>
 
@@ -581,7 +608,8 @@
         </div>
         <div>
           <div class="piece-title"><span class="piece-num">06</span><h3>Coincidir en la existencia</h3></div>
-          <div class="piece-medium">Óleo sobre lienzo</div>
+          <div class="piece-medium">Óleo sobre lienzo · 120 × 80 cm</div>
+          <a class="piece-cta" href="https://wa.me/573002260816?text=Hola%20Le%C3%B3n%2C%20me%20interesa%20la%20obra%20Coincidir%20en%20la%20existencia%20de%20Vida%20residual" target="_blank" rel="noopener">Me interesa esta obra →</a>
         </div>
       </div>
 
@@ -596,7 +624,8 @@
         </div>
         <div>
           <div class="piece-title"><span class="piece-num">07</span><h3>Ya se fue</h3></div>
-          <div class="piece-medium">Óleo sobre lienzo</div>
+          <div class="piece-medium">Óleo sobre lienzo · 25 × 35 cm</div>
+          <a class="piece-cta" href="https://wa.me/573002260816?text=Hola%20Le%C3%B3n%2C%20me%20interesa%20la%20obra%20Ya%20se%20fue%20de%20Vida%20residual" target="_blank" rel="noopener">Me interesa esta obra →</a>
         </div>
       </div>
     </section>
@@ -616,6 +645,9 @@
       <div class="btn-row">
         <a class="btn btn-primary" href="https://wa.me/573002260816?text=Hola%20Le%C3%B3n%2C%20vi%20tu%20expo%20Vida%20residual%20y%20quiero%20saber%20m%C3%A1s" target="_blank" rel="noopener">
           Escribir por WhatsApp
+        </a>
+        <a class="btn btn-secondary" href="https://wa.me/573002260816?text=Hola%20Le%C3%B3n%2C%20vi%20tu%20expo%20Vida%20residual%20y%20quiero%20hacer%20un%20encargo" target="_blank" rel="noopener">
+          Quiero hacer un encargo
         </a>
         <a class="btn btn-secondary" href="https://instagram.com/leonochoac" target="_blank" rel="noopener">
           @leonochoac en Instagram
