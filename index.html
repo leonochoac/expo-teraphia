@@ -165,6 +165,31 @@
   }
   .piece:last-child{border-bottom:1px solid var(--line);}
 
+  .series-header{
+    padding-top:30px;
+  }
+  .series-header p{
+    font-size:14px;
+    color:var(--bone-dim);
+    line-height:1.65;
+    max-width:52ch;
+    margin-top:6px;
+  }
+  .sub-piece{
+    border-top:1px dashed var(--line);
+    padding:22px 0 0;
+    margin-top:22px;
+  }
+  .sub-piece h4{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.15rem;
+    color:var(--bone);
+    margin-bottom:4px;
+  }
+  .sub-piece .piece-medium{margin-bottom:12px;}
+
   /* --- gallery / carousel per piece --- */
   .gallery{
     position:relative;
@@ -372,7 +397,7 @@
   }
 
   @media (min-width:680px){
-    .piece{
+    .piece:not(.series-header){
       display:grid;
       grid-template-columns:240px 1fr;
       gap:32px;
@@ -411,43 +436,83 @@
     <!-- CATALOG -->
     <section class="catalog">
       <span class="label">Obra expuesta</span>
-      <div class="sub">Siete piezas, Vida residual, 2026</div>
+      <div class="sub">Siete obras, once piezas, Vida residual, 2026</div>
 
       <!-- Post mortem (serie) -->
-      <div class="piece">
-        <div class="gallery" data-gallery>
-          <div class="gallery-track">
-            <div class="slide"><img src="https://i.ibb.co/S4Zy6p6w/IMG-4594.avif" alt="Post mortem — imagen 1" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/zWZP9xs7/IMG-4596.avif" alt="Post mortem — imagen 2" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/60y2JFcQ/IMG-4597.avif" alt="Post mortem — imagen 3" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/5g4pKKf9/IMG-4589.avif" alt="Post mortem — imagen 4" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/QSDvjNr/IMG-4591.avif" alt="Post mortem — imagen 5" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/yjqS0v0/IMG-4592.avif" alt="Post mortem — imagen 6" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/1GQJhQpZ/IMG-4582.avif" alt="Post mortem — imagen 7" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/j92jsL6d/IMG-4583.avif" alt="Post mortem — imagen 8" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/N288YzM0/IMG-4588.avif" alt="Post mortem — imagen 9" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/nqZTBFMY/IMG-4603.avif" alt="Post mortem — imagen 10" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/V0nHXghy/IMG-4605.avif" alt="Post mortem — imagen 11" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/bMswps5m/IMG-4576.avif" alt="Post mortem — imagen 12" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/gFFYK7Xg/IMG-4578.avif" alt="Post mortem — imagen 13" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/GvzLZDnG/IMG-4577.avif" alt="Post mortem — imagen 14" style="display:block"></div>
+      <div class="piece series-header">
+        <span class="tag">Serie · 5 piezas</span>
+        <div class="piece-title"><span class="piece-num">01</span><h3>Post mortem</h3></div>
+        <div class="piece-medium">Óleo sobre lienzo</div>
+        <p>Una serie sobre aquello que viene de afuera y termina afectando lo interno. Los órganos vitales aparecen enfermos, deteriorados o en descomposición, mientras insectos y otros organismos los habitan como agentes externos de transformación. La serie plantea una relación entre cuerpo, entorno y somatización: aquello que nos rodea también puede terminar habitándonos.</p>
+
+        <div class="piece sub-piece">
+          <div class="gallery" data-gallery>
+            <div class="gallery-track">
+              <div class="slide"><img src="https://leon8art.x02.me/i/corazon1.jpg" alt="Corazón — imagen 1" style="display:block"></div>
+              <div class="slide"><img src="https://leon8art.x02.me/i/corazon2.jpg" alt="Corazón — imagen 2" style="display:block"></div>
+              <div class="slide"><img src="https://leon8art.x02.me/i/corazon3.jpg" alt="Corazón — imagen 3" style="display:block"></div>
+            </div>
+            <div class="gallery-dots"></div>
           </div>
-          <div class="gallery-dots"></div>
+          <div><h4>Corazón</h4><div class="piece-medium">Óleo sobre lienzo</div></div>
         </div>
-        <div>
-          <span class="tag">Serie · 5 piezas</span>
-          <div class="piece-title"><span class="piece-num">01</span><h3>Post mortem</h3></div>
-          <div class="piece-medium">Óleo sobre lienzo</div>
-          <p>Una serie sobre aquello que viene de afuera y termina afectando lo interno. Los órganos vitales aparecen enfermos, deteriorados o en descomposición, mientras insectos y otros organismos los habitan como agentes externos de transformación. La serie plantea una relación entre cuerpo, entorno y somatización: aquello que nos rodea también puede terminar habitándonos.</p>
+
+        <div class="piece sub-piece">
+          <div class="gallery" data-gallery>
+            <div class="gallery-track">
+              <div class="slide"><img src="https://leon8art.x02.me/i/cerebro4.jpg" alt="Cerebro — imagen 1" style="display:block"></div>
+              <div class="slide"><img src="https://leon8art.x02.me/i/cerebro3.jpg" alt="Cerebro — imagen 2" style="display:block"></div>
+              <div class="slide"><img src="https://leon8art.x02.me/i/cerebro1.jpg" alt="Cerebro — imagen 3" style="display:block"></div>
+              <div class="slide"><img src="https://leon8art.x02.me/i/cerebro2.jpg" alt="Cerebro — imagen 4" style="display:block"></div>
+            </div>
+            <div class="gallery-dots"></div>
+          </div>
+          <div><h4>Cerebro</h4><div class="piece-medium">Óleo sobre lienzo</div></div>
+        </div>
+
+        <div class="piece sub-piece">
+          <div class="gallery" data-gallery>
+            <div class="gallery-track">
+              <div class="slide"><img src="https://leon8art.x02.me/i/higado2.jpg" alt="Hígado — imagen 1" style="display:block"></div>
+              <div class="slide"><img src="https://leon8art.x02.me/i/higado1.jpg" alt="Hígado — imagen 2" style="display:block"></div>
+              <div class="slide"><img src="https://leon8art.x02.me/i/higado3.jpg" alt="Hígado — imagen 3" style="display:block"></div>
+            </div>
+            <div class="gallery-dots"></div>
+          </div>
+          <div><h4>Hígado</h4><div class="piece-medium">Óleo sobre lienzo</div></div>
+        </div>
+
+        <div class="piece sub-piece">
+          <div class="gallery" data-gallery>
+            <div class="gallery-track">
+              <div class="slide"><img src="https://leon8art.x02.me/i/pulmon1.jpg" alt="Pulmón — imagen 1" style="display:block"></div>
+              <div class="slide"><img src="https://leon8art.x02.me/i/pulmon2.jpg" alt="Pulmón — imagen 2" style="display:block"></div>
+              <div class="slide"><img src="https://leon8art.x02.me/i/pulmon3.jpg" alt="Pulmón — imagen 3" style="display:block"></div>
+            </div>
+            <div class="gallery-dots"></div>
+          </div>
+          <div><h4>Pulmón</h4><div class="piece-medium">Óleo sobre lienzo</div></div>
+        </div>
+
+        <div class="piece sub-piece">
+          <div class="gallery" data-gallery>
+            <div class="gallery-track">
+              <div class="slide"><img src="https://leon8art.x02.me/i/rinon1.jpg" alt="Riñón — imagen 1" style="display:block"></div>
+              <div class="slide"><img src="https://leon8art.x02.me/i/rinon2.jpg" alt="Riñón — imagen 2" style="display:block"></div>
+            </div>
+            <div class="gallery-dots"></div>
+          </div>
+          <div><h4>Riñón</h4><div class="piece-medium">Óleo sobre lienzo</div></div>
         </div>
       </div>
 
       <div class="piece">
         <div class="gallery" data-gallery>
           <div class="gallery-track">
-            <div class="slide"><img src="https://i.ibb.co/WjBJpys/IMG-4571.avif" alt="Desolación — imagen principal" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/hxPNTGnQ/IMG-4572.avif" alt="Desolación — detalle 1" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/Swn5vSgd/IMG-4573.avif" alt="Desolación — detalle 2" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/momia2.jpg" alt="Desolación — imagen 1" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/momia1.jpg" alt="Desolación — imagen 2" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/momia4.jpg" alt="Desolación — imagen 3" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/momia3.jpg" alt="Desolación — imagen 4" style="display:block"></div>
           </div>
           <div class="gallery-dots"></div>
         </div>
@@ -460,9 +525,10 @@
       <div class="piece">
         <div class="gallery" data-gallery>
           <div class="gallery-track">
-            <div class="slide"><img src="https://i.ibb.co/sdHsn0KS/IMG-4609.avif" alt="Rezagos de un vanidoso — imagen principal" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/Z6krc7hX/IMG-4610.avif" alt="Rezagos de un vanidoso — detalle 1" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/m5M4HQvF/IMG-4612.avif" alt="Rezagos de un vanidoso — detalle 2" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/rezagos4.jpg" alt="Rezagos de un vanidoso — imagen 1" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/rezagos1.jpg" alt="Rezagos de un vanidoso — imagen 2" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/rezagos3.jpg" alt="Rezagos de un vanidoso — imagen 3" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/rezagos2.jpg" alt="Rezagos de un vanidoso — imagen 4" style="display:block"></div>
           </div>
           <div class="gallery-dots"></div>
         </div>
@@ -475,7 +541,7 @@
       <div class="piece">
         <div class="gallery" data-gallery>
           <div class="gallery-track">
-            <div class="slide"><img src="https://i.ibb.co/Gv90n81S/Captura-de-pantalla-2026-08-28-160050.png" alt="Deceso" style="display:block"></div>
+            <div class="slide"><img src="" alt="Deceso"></div>
           </div>
           <div class="gallery-dots"></div>
         </div>
@@ -488,9 +554,9 @@
       <div class="piece">
         <div class="gallery" data-gallery>
           <div class="gallery-track">
-            <div class="slide"><img src="https://i.ibb.co/Mx65srRh/IMG-4629.avif" alt="Tránsito entre la niebla — imagen principal" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/bMMfkqZ2/IMG-4630.avif" alt="Tránsito entre la niebla — detalle 1" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/39932RQB/IMG-4631.avif" alt="Tránsito entre la niebla — detalle 2" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/cabra3.jpg" alt="Tránsito entre la niebla — imagen 1" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/cabra2.jpg" alt="Tránsito entre la niebla — imagen 2" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/cabra1.jpg" alt="Tránsito entre la niebla — imagen 3" style="display:block"></div>
           </div>
           <div class="gallery-dots"></div>
         </div>
@@ -503,9 +569,13 @@
       <div class="piece">
         <div class="gallery" data-gallery>
           <div class="gallery-track">
-            <div class="slide"><img src="https://i.ibb.co/KzQhFDqS/IMG-4620.avif" alt="Coincidir en la existencia — imagen principal" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/xQbJ9N2/IMG-4626.avif" alt="Coincidir en la existencia — detalle 1" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/Q3z2jxXJ/IMG-4627.avif" alt="Coincidir en la existencia — detalle 2" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/rosas1.jpg" alt="Coincidir en la existencia — imagen 1" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/rosas2.jpg" alt="Coincidir en la existencia — imagen 2" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/rosas3.jpg" alt="Coincidir en la existencia — imagen 3" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/rosas4.jpg" alt="Coincidir en la existencia — imagen 4" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/rosas5.jpg" alt="Coincidir en la existencia — imagen 5" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/rosas6.jpg" alt="Coincidir en la existencia — imagen 6" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/rosas7.jpg" alt="Coincidir en la existencia — imagen 7" style="display:block"></div>
           </div>
           <div class="gallery-dots"></div>
         </div>
@@ -518,9 +588,9 @@
       <div class="piece">
         <div class="gallery" data-gallery>
           <div class="gallery-track">
-            <div class="slide"><img src="https://i.ibb.co/W4FHm0h8/IMG-4632.avif" alt="Ya se fue — imagen principal" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/JWYhQGzJ/IMG-4633.avif" alt="Ya se fue — detalle 1" style="display:block"></div>
-            <div class="slide"><img src="https://i.ibb.co/LXNkFFZT/IMG-4635.avif" alt="Ya se fue — detalle 2" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/yasefue1.jpg" alt="Ya se fue — imagen 1" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/yasefue2.jpg" alt="Ya se fue — imagen 2" style="display:block"></div>
+            <div class="slide"><img src="https://leon8art.x02.me/i/yasefue3.jpg" alt="Ya se fue — imagen 3" style="display:block"></div>
           </div>
           <div class="gallery-dots"></div>
         </div>
